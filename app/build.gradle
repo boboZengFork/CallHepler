@@ -28,4 +28,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     
     compile project(':callhelperLib')
+    implementation 'com.guolindev.permissionx:permissionx:1.5.1'
 }

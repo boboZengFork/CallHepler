@@ -14,9 +14,11 @@ public class CallReceiver extends BroadcastReceiver {
     
     @Override
     public void onReceive(Context context, Intent intent) {
+        System.out.println("zengbobo CallReceiver onReceive");
         if (!intent.getAction().equals(Intent.ACTION_NEW_OUTGOING_CALL)) {
             TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Service.TELEPHONY_SERVICE);
             int currentCallState = telephonyManager.getCallState();
+            System.out.println("zengbobo CallReceiver onReceive currentCallState="+currentCallState);
             switch (currentCallState) {
                 case TelephonyManager.CALL_STATE_RINGING:
                     Intent workIntent = new Intent(context, CallWorkActivity.class);
